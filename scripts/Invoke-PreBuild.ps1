@@ -21,7 +21,7 @@ function Get-ScriptDirectory {
         #  Read Arguments 
         #
         ########################################################################################
-        $ExpectedNumberArguments = 2
+        $ExpectedNumberArguments = 0
         $Script:Arguments = $args.Clone()
         [System.Collections.ArrayList]$ArgumentList = [System.Collections.ArrayList]::new()
         0..$ExpectedNumberArguments |  % {
@@ -34,18 +34,13 @@ function Get-ScriptDirectory {
 
         [Bool]$DebugMode                = ([string]::IsNullOrEmpty($Script:Arguments[3]) -eq $False)
 
-        [string]$TargetName             = $ArgumentList.Item(0)
-        [string]$SolutionDirectory      = $ArgumentList.Item(1)
-        [string]$CXRBinary               = $ArgumentList.Item(2)
+      
+        [string]$SolutionDirectory      = $ArgumentList.Item(0)
 
         [string]$SolutionDirectory      = (Resolve-Path "$SolutionDirectory").Path
         [string]$TestDirectory          = (Resolve-Path "$SolutionDirectory\Test").Path
         [string]$DependenciesDirectory  = (Resolve-Path "$SolutionDirectory\scripts\dependencies").Path
         [string]$TestDepsDirectory      = (Resolve-Path "$TestDirectory\scripts\dependencies").Path
-        [string]$ResCryptBinary         = (Resolve-Path "$ResCryptBinary").Path
-        [string]$StringsCxr             = "$TestDirectory\strings.cxr"
-        [string]$StringsCpp             = "$TestDirectory\strings.cpp"
-        [string]$TmpFile                = "$ENV:TEMP\Out.txt"
         [string]$GitExe                 = (Get-Command 'git.exe').Source
 
         Write-Output "====================================================="
@@ -66,15 +61,7 @@ function Get-ScriptDirectory {
         Write-Debug "########################################################################################"
 
 
-        Remove-Item "$StringsCpp" -Force -ErrorAction Ignore
-        Write-Output "====================================================="
-        Write-Output " GENERATING ENCRYPTED STRINGS in strings.cpp"
-        Write-Output "`"$ResCryptBinary`" `"-i`" `"$StringsCxr`" `"-o`" `"$StringsCpp`""
-        Write-Output "====================================================="
-        &"$ResCryptBinary" "-i" "$StringsCxr" "-o" "$StringsCpp" *> "$TmpFile"
-        [string[]]$Out = Get-Content "$TmpFile"
-        $Success = $Out[$Out.Count -1].Contains("created")
-        if($False -eq $Success) { throw "FAILED TO ENCYPT STRINGS $Out"}
+
     }catch{
         Write-Error "$_"
     }

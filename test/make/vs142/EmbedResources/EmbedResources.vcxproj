@@ -56,6 +56,7 @@
     <TempRoot>$(ProjectDir)</TempRoot>
     <SolutionRootDirectory>$(ProjectDir)..\..\..\</SolutionRootDirectory>
     <ScriptsDirectory>$(SolutionRootDirectory)scripts\</ScriptsDirectory>
+    <ResCryptPath>$(SolutionRootDirectory)rescrypt.exe</ResCryptPath>
   </PropertyGroup>
   <PropertyGroup Label="ModuleMacros">
     <ProjectOutputDirectory>$(SolutionRootDirectory)bin\$(Platform)\$(Configuration)</ProjectOutputDirectory>
@@ -87,7 +88,7 @@
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <PreBuildEvent>
-      <Command>pwsh.exe -nop -noni -f $(ScriptsDirectory)Invoke-PreBuild.ps1 $(SolutionRootDirectory)</Command>
+      <Command>pwsh.exe -nop -noni -f $(ScriptsDirectory)Invoke-PreBuild.ps1 $(TargetPath) $(SolutionRootDirectory) $(ResCryptPath)</Command>
     </PreBuildEvent>
     <PostBuildEvent>
       <Command>pwsh.exe -nop -noni -f $(ScriptsDirectory)Invoke-PostBuild.ps1 $(SolutionRootDirectory) $(TargetPath)</Command>
