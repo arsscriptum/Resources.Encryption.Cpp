@@ -1,3 +1,6 @@
 [submodule "scripts/dependencies"]
 	path = scripts/dependencies
 	url = https://github.com/arsscriptum/Powershell.BuildScripts.git
+[submodule "test/scripts/dependencies"]
+	path = test/scripts/dependencies
+	url = https://github.com/arsscriptum/Powershell.BuildScripts.git

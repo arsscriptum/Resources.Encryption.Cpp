@@ -31,3 +31,8 @@ _ReSharper*/
 .vs/
 #Nuget packages folder
 packages/
+
+rescrypt.exe
+bin/*.exe
+bin
+bin/**
