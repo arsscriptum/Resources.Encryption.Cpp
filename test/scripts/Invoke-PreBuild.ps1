@@ -72,17 +72,18 @@ function Get-ScriptDirectory {
 
         [System.Boolean]$IsAdministrator = Invoke-IsAdministrator 
 
-        <#
+        
         Remove-Item "$StringsCpp" -Force -ErrorAction Ignore
         Write-Output "====================================================="
         Write-Output " GENERATING ENCRYPTED STRINGS in strings.cpp"
         Write-Output "`"$ResCryptBinary`" `"-i`" `"$StringsCxr`" `"-o`" `"$StringsCpp`""
         Write-Output "====================================================="
-        &"$ResCryptBinary" "-i" "$StringsCxr" "-o" "$StringsCpp" *> "$TmpFile"
+        &"$ResCryptBinary" "-i" "$StringsCxr" "-o" "$StringsCpp" "-q" *> "$TmpFile"
         [string[]]$Out = Get-Content "$TmpFile"
         $Success = $Out[$Out.Count -1].Contains("created")
         if($False -eq $Success) { throw "FAILED TO ENCYPT STRINGS $Out"}
-        #>
+        if($True -eq $Success) { Write-Output "SUCCESSFULLY PROCESSED `"$StringsCxr`" => `"$StringsCpp`"" }
+        
         
         $InputRcFile = "$SourcePath\EmbedResources.rc"
         $OutputRcFile = "$SourcePath\EncryptedResources.rc"

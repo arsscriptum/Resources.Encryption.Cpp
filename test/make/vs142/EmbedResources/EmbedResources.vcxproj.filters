@@ -27,6 +27,9 @@
     <ClCompile Include="..\..\..\src\Base64.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\src\strings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="..\..\..\src\EncryptedResources.rc">
@@ -59,6 +62,9 @@
   <ItemGroup>
     <None Include="..\..\..\src\EmbedResources.rc">
       <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\src\strings.cxr">
+      <Filter>Source Files</Filter>
     </None>
   </ItemGroup>
 </Project>

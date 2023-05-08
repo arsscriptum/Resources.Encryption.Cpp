@@ -23,12 +23,20 @@
     <ClCompile Include="..\..\..\src\Crypt.cpp" />
     <ClCompile Include="..\..\..\src\main.cpp" />
     <ClCompile Include="..\..\..\src\Stream.cpp" />
+    <ClCompile Include="..\..\..\src\strings.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="..\..\..\src\EncryptedResources.rc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\src\EmbedResources.rc" />
+    <None Include="..\..\..\src\strings.cxr">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\src\Base64.h" />
