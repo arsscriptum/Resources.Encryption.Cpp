@@ -1,0 +1,27 @@
+#include "resource.h"
+
+IDR_TEXT1               TEXT                    "resources\\very_important_data.txt"
+IDR_TEXT2               TEXT                    "resources\\more_data.txt"
+STRINGTABLE
+{
+    IDR_STRING1                   "Now if you want a const char * (you are not going to modify the buffer but just look at it), you are stuck between the  of casting or copying the buffer (which in theory is a performance loss)."
+    IDR_STRING2                   "Queen Camilla was also wearing the Coronation necklace and earrings made for Queen Victoria by Garrard"
+    IDR_STRING3                   "Cut from Peau de Soie, a matte silk fabric, and woven in Suffolk by Stephen Walters, the dress featured embroidery depicting garlands of wildflowers, said to represent the King and Queen's affection for nature and the British countryside"
+    IDR_STRING4                   "testtes"
+    IDR_STRING5                   "wolf eagle anteater gorilla gorilla bear eagle snake turtle bull bear baselisk bear rooster bear deer snake turtle hyena snake lion "
+    IDR_STRING6                   "fish cow bunny fish mustang meerkat bear deer rabbit meerkat anteater lizzard panda rabbit baselisk cow turtle lion eagle colt rooster "
+    IDR_STRING7                   "hyena cow rabbit pronghorn snake mustang wolf beaver panda wolverine bunny mustang bunny lion rabbit bunny pig rooster turtle tiger tiger "
+    IDR_STRING8                   "deer beaver anteater meerkat turtle hyena pig bull fish beaver turtle bear turtle cow bunny pronghorn wolf panda beaver baselisk beaver "
+    IDR_STRING9                   "gorilla tiger ox meerkat snake meerkat owl owl peccary wolverine turtle cow anteater frog snake lizzard owl hyena peccary lizzard eagle "
+    IDR_STRING10                   "sheep peccary beaver baselisk lizzard beaver baselisk lion peccary puma lion beaver turtle peccary owl snake deer hyena bull pig anteater "
+    IDR_STRING11                   "deer tiger mustang rabbit turtle rabbit peccary deer eagle rabbit anteater sheep pig gorilla frog baselisk ox owl pronghorn baselisk rooster "
+    IDR_STRING12                   "bull bear lion puma panda gorilla sheep panda peccary bear bull ox panda owl hyena pig wolverine colt gorilla deer lizzard "
+    IDR_STRING13                   "ox deer frog mustang pronghorn bunny rabbit anteater sheep panda puma rooster baselisk sheep bear cow turtle frog frog rabbit bull "
+    IDR_STRING14                   "sheep bear deer anteater frog baselisk peccary pronghorn cow hyena bear peccary anteater pronghorn rabbit pronghorn snake eagle pronghorn colt meerkat "
+    IDR_STRING15                   "snake meerkat lion bunny pig eagle bunny rabbit meerkat bull wolverine colt pronghorn snake pronghorn lion frog cow fish rooster owl "
+    IDR_STRING16                   "bear frog rabbit panda bear bull sheep deer puma rabbit wolf rabbit fish lion bunny anteater ox bull mustang pig hyena "
+    IDR_STRING17                   "sheep meerkat ox wolverine rabbit peccary colt ox rabbit eagle deer owl deer hyena fish fish hyena meerkat pig eagle tiger "
+    IDR_STRING18                   "pig wolverine colt turtle owl peccary eagle owl meerkat anteater tiger panda lion turtle rabbit panda owl sheep lion deer frog "
+    IDR_STRING19                   "owl puma eagle wolf frog rabbit bull peccary mustang rooster fish wolverine ox pronghorn bull sheep pig tiger owl snake tiger "
+    IDR_STRING20                   "beaver cow meerkat deer rabbit anteater fish anteater snake beaver baselisk rooster cow mustang panda peccary gorilla cow cow tiger bunny "
+}

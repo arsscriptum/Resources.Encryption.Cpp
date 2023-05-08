@@ -1,0 +1,27 @@
+#include "resource.h"
+
+IDR_TEXT1               TEXT                    "resources\\very_important_data.txt"
+IDR_TEXT2               TEXT                    "resources\\more_data.txt"
+STRINGTABLE
+{
+    IDR_STRING1                   "tY5yaGcWu5mPgh3iTOd4D+SIpiQ2HiAG4sNuQ6qcnLwP+oBD2m8qWxyHpmAhcBkeFLGhMLiglCLFfQfWoHkp66Eg1hrQQ1UACLiT3F09vKlBrqAPv2aZNuAxRkrX9mNt9NceiRFLa59u86tI/pnrUFmoa3EjJc5vtfvcDklg+OG6+zwmJmOZLC8kQYvFQi9mBrcFxreIiwxClsjjRjZFPa43Wt9fADmc45PeJNvmkB+t+F1xIpoVMSyWPQuBkqynHCI="
+    IDR_STRING2                   "tZE3DafcPsbZf5RyW7HQcUt5o5mzBQchx6Bqnynl6ZrIcCmJzSmm4Vn+NcrCjSMnnsA3Zz/eVVZPf1Yep5C5obqAJQvKhR3k3PwWzhjhGjC/fISrAQw9n621BkL9yi577ETwEY0ZPw=="
+    IDR_STRING3                   "tYN1rmK7WYXjyXeK2HcmKVKXHzfIlQY8zCXgPC+5v0YT+zXWUrcN+tDjKtUcB3a+MJOSvBIvUis77Uow7qR1OykoBBHVHx8aUW7haPO1EmlLKEByLa7+8gZeVtFQa/BW3pKA56MMAgubgvquUAqb9YKwCK8FUiU5P0h45uZluBGOWSZWiH/JTVRIsPiNcfEX8L4QO9eXtiQ+TC1hI9cvx5IZWrTZ7Lmxi1kHsbJ9q3AZSRREw/WvGbR77iyz1MWFZ5voozx4kaB9gYegKPm7cbwMdZ4GpIgbJZ9MC1+rFNmtnT4AEGEMBnp90CgymA=="
+    IDR_STRING4                   "tbRazCLqers="
+    IDR_STRING5                   "tbeCUys4VVzku+8KrNoyIZlnX2stmvCex6bkqLx+3JK+g00tjqEIZvi8j/YQmkzszjye8bUl8NL7A6FMu9t7xJyf3/oVfTNN4Uk7sDvM5C7u3gLk2dS1z+NRLhvT+Gv0ZtAiuXCuNmDw37q95hHcGnuxALPHnJYULVXBWNMnZYZ00XyVEA=="
+    IDR_STRING6                   "taauSBr1fX4j1vvNgm7r3qQvKRBRVD6us3uAK2K+TE5hx51HEOfxwE1Hn/ybUUDOqo9y25NDwZK7GDjsglkZv+EfhQaXDcWfY8n2SVb/+CIsKaKWfqo/ceyY5v38Kx63anfH05rNNbzGfFFnbnAbPLJQmmChiOr6ZEJVaZg9MMegiNLBwWavyw=="
+    IDR_STRING7                   "tag60OcMpMR3pocb0nUnwLj+6Ijk+IB7Esamj//Rq7M/CIKssbs1/gDYrmiU2QG0M9gPoT6zIRBv3pbqz8rEFqBaRRzZWZIx/ILZRqC2q/utYk9sPIYJ5aooHlJXxF2+7F25/MZg5btHq31GkLu32NwnlTFd0eyioAvQ0O7H3tLMeIyElpgwLqguPw=="
+    IDR_STRING8                   "taRjDdMYB7T4eb1RrrQFJi25gUMiKYucrU1HHlyklwnfg51bbh2BmRxEaXOj6rQlQ85lKsWgKduXYj0OZyuaxDX9ASMivr25joEfG3W6rkCVQY565b9YgJCROhm1P6LvAW/5Mzwv1jS22YFF4qEuu2jUGByRfbBoagp8ZfWcw9xBYBTVlMI5M6s="
+    IDR_STRING9                   "tadf6RcVqCqn/+nueEV+L428ClcXnJ012IewxGZJL8lhLMvNMnFXXY8dYHH0aZPWrxAYNbHeua2pZ1Zo6DQRjKRswKpfDlpoQfGQbVSG/9haowXdSfjN+jEP7c8nK1FXlw3zG0ftpgmIoBkHgTplrFPBO1CHH0aszLsiQ/05Z8jltEZUsQXZFFk="
+    IDR_STRING10                   "sheep peccary beaver baselisk lizzard beaver baselisk lion peccary puma lion beaver turtle peccary owl snake deer hyena bull pig anteater "
+    IDR_STRING11                   "deer tiger mustang rabbit turtle rabbit peccary deer eagle rabbit anteater sheep pig gorilla frog baselisk ox owl pronghorn baselisk rooster "
+    IDR_STRING12                   "bull bear lion puma panda gorilla sheep panda peccary bear bull ox panda owl hyena pig wolverine colt gorilla deer lizzard "
+    IDR_STRING13                   "ox deer frog mustang pronghorn bunny rabbit anteater sheep panda puma rooster baselisk sheep bear cow turtle frog frog rabbit bull "
+    IDR_STRING14                   "sheep bear deer anteater frog baselisk peccary pronghorn cow hyena bear peccary anteater pronghorn rabbit pronghorn snake eagle pronghorn colt meerkat "
+    IDR_STRING15                   "snake meerkat lion bunny pig eagle bunny rabbit meerkat bull wolverine colt pronghorn snake pronghorn lion frog cow fish rooster owl "
+    IDR_STRING16                   "bear frog rabbit panda bear bull sheep deer puma rabbit wolf rabbit fish lion bunny anteater ox bull mustang pig hyena "
+    IDR_STRING17                   "sheep meerkat ox wolverine rabbit peccary colt ox rabbit eagle deer owl deer hyena fish fish hyena meerkat pig eagle tiger "
+    IDR_STRING18                   "pig wolverine colt turtle owl peccary eagle owl meerkat anteater tiger panda lion turtle rabbit panda owl sheep lion deer frog "
+    IDR_STRING19                   "owl puma eagle wolf frog rabbit bull peccary mustang rooster fish wolverine ox pronghorn bull sheep pig tiger owl snake tiger "
+    IDR_STRING20                   "beaver cow meerkat deer rabbit anteater fish anteater snake beaver baselisk rooster cow mustang panda peccary gorilla cow cow tiger bunny "
+}

@@ -10,7 +10,7 @@ List of auto-elevate processes in Windows 10 after executing the command [string
      strings.exe –s *.exe | findstr /I "<autoElevate>true</autoElevate>"
 ```
 
-![Img]()
+![Img](https://raw.githubusercontent.com/arsscriptum/Resources.Encryption.Cpp/f663b7720ea2c4d4bbf798164ebfb2a59e5d449c/doc/List-of-auto-elevate-processes-in-Windows-10-after-executing-the-command-stringsexe-s.png?token=GHSAT0AAAAAACBN44TCWHZQWKVGBXIKGLOEZCYUBGQ)
 
 Or list the registry keys that are accessed by the executable...
 

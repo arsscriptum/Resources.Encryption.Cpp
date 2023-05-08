@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\Base64.cpp" />
+    <ClCompile Include="..\..\..\src\Crypt.cpp" />
+    <ClCompile Include="..\..\..\src\main.cpp" />
+    <ClCompile Include="..\..\..\src\Stream.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\..\..\src\EncryptedResources.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\src\EmbedResources.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\Base64.h" />
+    <ClInclude Include="..\..\..\src\Crypt.h" />
+    <ClInclude Include="..\..\..\src\Decoder.h" />
+    <ClInclude Include="..\..\..\src\dump_res.h" />
+    <ClInclude Include="..\..\..\src\nowarns.h" />
+    <ClInclude Include="..\..\..\src\resource.h" />
+    <ClInclude Include="..\..\..\src\Stream.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{CE6CE387-6829-4E31-976B-63AE8A3B1669}</ProjectGuid>
+    <RootNamespace>EmbedResources</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Label="ServiceMacros">
+    <ProjectRoot>$(ProjectDir)..\..\..\</ProjectRoot>
+    <TempRoot>$(ProjectDir)</TempRoot>
+    <SolutionRootDirectory>$(ProjectDir)..\..\..\</SolutionRootDirectory>
+    <ExternalDirectory>$(SolutionRootDirectory)external\</ExternalDirectory>
+    <ScriptsDirectory>$(SolutionRootDirectory)scripts\</ScriptsDirectory>
+  </PropertyGroup>
+  <PropertyGroup Label="ModuleMacros">
+    <ProjectOutputDirectory>$(SolutionRootDirectory)bin\$(Platform)\$(Configuration)</ProjectOutputDirectory>
+    <ProjectObjectDirectory>$(TempRoot)___temp_compilation_files\obj\$(TargetName)\$(Platform)\$(Configuration)</ProjectObjectDirectory>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OutDir>$(ProjectDir)..\bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)__build_obj\$(Platform)\$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <TargetName>$(TargetName)</TargetName>
+    <OutputBinary>$(OutDir)$(TargetName)$(TargetExt)</OutputBinary>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <DisableSpecificWarnings Condition="'$(CHARLS_ALL_WARNINGS)'!=''">4061;4244;4365;4464;4514;4571;4623;4625;4626;4710;4711;4738;4820;5026;5027;5045;5246;5264;5258</DisableSpecificWarnings>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <!-- Use all cores to speed up the compilation (MS recommended best practice). -->
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <PreBuildEvent>
+      <Command>pwsh.exe -nop -noni -f $(ScriptsDirectory)Invoke-PreBuild.ps1 $(SolutionRootDirectory)</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)'=='Debug'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)'=='Release'">
+    <ClCompile>
+      <Optimization>MinSpace</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Default</BasicRuntimeChecks>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
