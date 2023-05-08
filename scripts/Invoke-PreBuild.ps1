@@ -39,15 +39,29 @@ function Get-ScriptDirectory {
         [string]$CXRBinary               = $ArgumentList.Item(2)
 
         [string]$SolutionDirectory      = (Resolve-Path "$SolutionDirectory").Path
-         [string]$TestDirectory        = (Resolve-Path "$SolutionDirectory\Test").Path
-        [string]$CXRBinary               = (Resolve-Path "$CXRBinary").Path
+        [string]$TestDirectory          = (Resolve-Path "$SolutionDirectory\Test").Path
+        [string]$DependenciesDirectory  = (Resolve-Path "$SolutionDirectory\scripts\dependencies").Path
+        [string]$TestDepsDirectory      = (Resolve-Path "$TestDirectory\scripts\dependencies").Path
+        [string]$ResCryptBinary         = (Resolve-Path "$ResCryptBinary").Path
         [string]$StringsCxr             = "$TestDirectory\strings.cxr"
         [string]$StringsCpp             = "$TestDirectory\strings.cpp"
         [string]$TmpFile                = "$ENV:TEMP\Out.txt"
+        [string]$GitExe                 = (Get-Command 'git.exe').Source
+
+        Write-Output "====================================================="
+        Write-Output " GETTING LATEST SCRIPTS FROM GIT"
+        Write-Output "====================================================="
+        Push-Location "$DependenciesDirectory"
+        &"$GitExe" "pull"
+        Pop-Location
+        Push-Location "$TestDepsDirectory"
+        &"$GitExe" "pull"
+        Pop-Location
+        
         Write-Debug "########################################################################################"
         Write-Debug "                                    DEBUG ARGUMENTS                                     "
         Write-Debug "`tTargetName          ==> $TargetName"
-        Write-Debug "`tPlBinary            ==> $CXRBinary"
+        Write-Debug "`tResCryptBinary      ==> $ResCryptBinary"
         Write-Debug "`tSolutionDirectory   ==> $SolutionDirectory"
         Write-Debug "########################################################################################"
 
@@ -55,9 +69,9 @@ function Get-ScriptDirectory {
         Remove-Item "$StringsCpp" -Force -ErrorAction Ignore
         Write-Output "====================================================="
         Write-Output " GENERATING ENCRYPTED STRINGS in strings.cpp"
-        Write-Output "`"$CxrBinary`" `"-i`" `"$StringsCxr`" `"-o`" `"$StringsCpp`""
+        Write-Output "`"$ResCryptBinary`" `"-i`" `"$StringsCxr`" `"-o`" `"$StringsCpp`""
         Write-Output "====================================================="
-        &"$CxrBinary" "-i" "$StringsCxr" "-o" "$StringsCpp" *> "$TmpFile"
+        &"$ResCryptBinary" "-i" "$StringsCxr" "-o" "$StringsCpp" *> "$TmpFile"
         [string[]]$Out = Get-Content "$TmpFile"
         $Success = $Out[$Out.Count -1].Contains("created")
         if($False -eq $Success) { throw "FAILED TO ENCYPT STRINGS $Out"}

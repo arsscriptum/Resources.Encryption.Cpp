@@ -15,6 +15,7 @@ obj/**
 
 Test/*.exe
 Test/*.sln
+test/*.txt
 
 Debug
 Debug/**
