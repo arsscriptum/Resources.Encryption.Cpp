@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rescrypt", "vs\rescrypt.vcxproj", "{69860BBE-3233-49C8-9F08-ABBE4CA82AAC}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EmbedResources", "test\make\vs142\EmbedResources\EmbedResources.vcxproj", "{CE6CE387-6829-4E31-976B-63AE8A3B1669}"
+	ProjectSection(ProjectDependencies) = postProject
+		{69860BBE-3233-49C8-9F08-ABBE4CA82AAC} = {69860BBE-3233-49C8-9F08-ABBE4CA82AAC}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
