@@ -71,10 +71,12 @@ function Get-ScriptDirectory {
 
  
         Write-BuildOutTitle "COPY BUILT BINARY"
-        
         Copy-Item "$BuiltBinary" "$BinDirectory"
-        
         Write-Output " `"$BuiltBinary`" ==> `"$BinDirectory`"" 
+
+        Write-BuildOutTitle "TEST RESOURCES"
+        Test-ExecutableResources -Path "$BuiltBinary"
+
     }catch{
         Write-Error "$_"
     }

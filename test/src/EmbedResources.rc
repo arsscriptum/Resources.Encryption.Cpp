@@ -7,7 +7,7 @@ STRINGTABLE
     IDR_STRING1                   "Now if you want a const char * (you are not going to modify the buffer but just look at it), you are stuck between the  of casting or copying the buffer (which in theory is a performance loss)."
     IDR_STRING2                   "Queen Camilla was also wearing the Coronation necklace and earrings made for Queen Victoria by Garrard"
     IDR_STRING3                   "Cut from Peau de Soie, a matte silk fabric, and woven in Suffolk by Stephen Walters, the dress featured embroidery depicting garlands of wildflowers, said to represent the King and Queen's affection for nature and the British countryside"
-    IDR_STRING4                   "testtes"
+    IDR_STRING4                   "This is a clear text GUID c304d438-6324-4faa-9515-d99153b11ce8"
     IDR_STRING5                   "wolf eagle anteater gorilla gorilla bear eagle snake turtle bull bear baselisk bear rooster bear deer snake turtle hyena snake lion "
     IDR_STRING6                   "fish cow bunny fish mustang meerkat bear deer rabbit meerkat anteater lizzard panda rabbit baselisk cow turtle lion eagle colt rooster "
     IDR_STRING7                   "hyena cow rabbit pronghorn snake mustang wolf beaver panda wolverine bunny mustang bunny lion rabbit bunny pig rooster turtle tiger tiger "
